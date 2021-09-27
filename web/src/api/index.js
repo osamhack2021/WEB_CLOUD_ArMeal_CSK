@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const PATH = "http://13.124.124.151:8080";
+const PATH = "http://20.194.59.184";
 
 export const login = async ({id, pw}) => {
   await axios.post(`${PATH}/login`, {id: id, password: pw}).then((res) => {

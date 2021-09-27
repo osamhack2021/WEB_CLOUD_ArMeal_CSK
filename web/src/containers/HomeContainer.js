@@ -8,7 +8,7 @@ export default function HomeContainer(){
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(login({id: "tester", pw: "1111"}));
+    dispatch(login({login_id: "test", password: "12345"}));
   }, [dispatch])
   
   return (

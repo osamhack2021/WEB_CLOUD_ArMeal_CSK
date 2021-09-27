@@ -2,8 +2,8 @@ import axios from "axios"
 
 const PATH = "http://20.194.59.184";
 
-export const login = async ({id, pw}) => {
-  await axios.post(`${PATH}/login`, {id: id, password: pw}).then((res) => {
+export const login = async ({login_id, password}) => {
+  await axios.post(`${PATH}/login`, {"login_id": login_id, "password": password}).then((res) => {
     return res;
   }).catch((e) => {
     throw new Error(e);

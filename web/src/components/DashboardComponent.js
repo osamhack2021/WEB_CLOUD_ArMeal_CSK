@@ -6,7 +6,32 @@ const Container = styled.div`
   
 `
 
-const Wrapper = styled.div`
+const Wrapper1 = styled.div`
+@media (max-width: 500px){
+  width: auto;
+  display: block;
+
+}
+@media (min-width: 768px) and (max-width: 1100px){
+  width: inherit;
+  display: block;
+}
+
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+  padding: 0 4vw;
+  margin-top: ${props => props.margin ? props.margin : 0};
+`
+const Wrapper2 = styled.div`
+@media (max-width: 500px){
+  width: auto;
+  margin: 0px 0px;
+}
+@media (min-width: 768px) and (max-width: 1100px){
+  width: inherit;
+  display: block;
+}
   display: flex;
   justify-content: space-between;
   width: 70vw;
@@ -14,13 +39,63 @@ const Wrapper = styled.div`
   margin-top: ${props => props.margin ? props.margin : 0};
 `
 
-const Box = styled.div`
+const Box1 = styled.div`
+@media (max-width: 500px){
+  width: auto;
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) and (max-width: 1100px){
+  height: auto;
+  width: inherit;
+  padding: 20px;
+}
   width: ${props => props.width ? props.width : 0};
   height: ${props => props.height ? props.height : "auto"};
   background-color: #FFFFFF;
   border: 1px solid #E9E9EF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  
+`
+const Box2 = styled.div`
+@media (max-width: 500px){
+  width: auto;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) and (max-width: 1023px){
+  width: inherit;
+  height: 43vh;
+  margin: 10px 0px;
+}
+@media (min-width: 1024px) and (max-width: 1100px){
+  width: inherit;
+  height: 39vh;
+  margin: 10px 0px;
+}
+  width: ${props => props.width ? props.width : 0};
+  height: ${props => props.height ? props.height : "auto"};
+  background-color: #FFFFFF;
+  border: 1px solid #E9E9EF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`
+const Box3 = styled.div`
+@media (min-width: 768px) and (max-width: 1024px){
+  width: -webkit-fill-available;
+  height: 24vh;
+}
+
+@media (min-width: 1024px) and (max-width: 1100px){
+  width: -webkit-fill-available;
+  height: 17vh;
+}
+@media (max-width: 500px){
+  width:100%;
+  margin-top: 10px;
+}
+  width: ${props => props.width ? props.width : 0};
+  height: ${props => props.height ? props.height : "auto"};
+  background-color: #FFFFFF;
+  border: 1px solid #E9E9EF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
 const Head = styled.div`
@@ -32,12 +107,35 @@ const Head = styled.div`
 `
 
 const ChartWrapper = styled.div`
+@media (max-width: 500px){
+  justify-content: space-around;
+}
+@media (min-width: 768px) and (max-width: 1100px){
+  width: -webkit-fill-available;
+  justify-content: space-evenly;
+}
   width: 100%;
   display: flex;
   justify-content: center;
 `
-
+const DoughnutchartWrapper = styled.div`
+@media (max-width: 500px){
+  width: 300px;
+}
+@media (min-width: 768px) and (max-width: 1100px){
+  width: 350px;
+}
+width: 350px;
+`
 const Score = styled.div`
+@media (max-width: 500px){
+  width: auto;
+  left: 40vw;
+  top: 36vh;
+}
+@media (min-width: 1024px) and (max-width: 1100px){
+  top: 30vh;
+}
   position: absolute;
   font-size: 30px;
   top: 35vh;
@@ -52,17 +150,37 @@ const Point = styled.div`
 `
 
 const DataSpec = styled.div`
+@media (max-width: 500px){
+  display:none;
+}
+@media (min-width: 768px) and (max-width: 1100px){
+  padding:0px;
+  width: 26vw;
+}
   width: 12vw;
   padding-top: 8vh;
   padding-left: 2vw;
 `
 
 const SatisfyData = styled.div`
+@media (min-width: 768px) and (max-width: 1100px){
+  margin: 35px 0px;
+}
+@media (min-width: 1024px) and (max-width: 1100px){
+  font-size: 29px;
+}
   font-size: 22px;
   margin-bottom: 20px;
 `
 
 const Badge = styled.div`
+@media (min-width: 1024px) and (max-width: 1100px){
+  height: 35px;
+  font-size: 15px;
+  font-size: 24px;
+  width: 106px;
+  line-height: 31px;
+}
   width: 65px;
   height: 24px;
   border: 3px solid #36A2EB;
@@ -122,8 +240,17 @@ const TodayWrapper = styled.div`
 `
 
 const TypeBox = styled.div`
-  width: 20vw;
+@media (max-width: 500px){
+  height: 17vh;
+}
+@media (min-width: 768px) and (max-width: 1024px){
   height: 14vh;
+}
+@media (min-width: 1024px) and (max-width: 1100px){
+  height: 10vh;
+}
+  width: 20vw;
+  height: 17vh;
   background-color: #EAEAEA;
   padding: 0 13px;
 `
@@ -160,21 +287,22 @@ const TypeBar = styled.div`
 export default function DashboardComponent({chartData, average, dataName, menuRanking, todayData, history}){
   return (
     <Container>
-      <Wrapper>
-        <Box width="45vw" height="47vh">
+      <Wrapper1>
+        <Box1 width="45vw" height="47vh">
           <Head>
             전체 만족도
           </Head>
           <ChartWrapper>
-            <div>
-              <DoughnutChart chartData={chartData} width="350px"/>
+            <DoughnutchartWrapper>
+              {/* <DoughnutChart chartData={chartData}/> */}
+              <DoughnutChart chartData={chartData} width='350px'/>
               <Score>
                 평균
                 <Point satisfy={average}>
                   {average}%
                 </Point>
               </Score>
-            </div>
+            </DoughnutchartWrapper>
             <DataSpec>
               {chartData.map((data, index) => {
                 return (
@@ -188,10 +316,10 @@ export default function DashboardComponent({chartData, average, dataName, menuRa
               })}
             </DataSpec>
           </ChartWrapper>
-        </Box>
+        </Box1>
 
 
-        <Box width="20vw" height="47vh">
+        <Box2 width="20vw" height="47vh">
           <Head>
             메뉴 랭킹
           </Head>
@@ -213,12 +341,12 @@ export default function DashboardComponent({chartData, average, dataName, menuRa
               )
             })}
           </LeaderBoard>
-        </Box>
-      </Wrapper>
+        </Box2>
+      </Wrapper1>
 
       
-      <Wrapper margin="28px">
-        <Box width="70vw" height="28vh">
+      <Wrapper2 margin="28px">
+        <Box3 width="70vw" height="28vh">
           <Head>
             금일 만족도
           </Head>
@@ -240,8 +368,8 @@ export default function DashboardComponent({chartData, average, dataName, menuRa
               )
             })}
           </TodayWrapper>
-        </Box>
-      </Wrapper>
+        </Box3>
+      </Wrapper2>
     </Container>
   )
 }

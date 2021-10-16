@@ -28,12 +28,15 @@ function DoughnutChart({chartData, width}) {
   };
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         display: false
       }
     }
   }
+  
   return (
     <Doughnut data={data} width={width} options={options}/>
   )
